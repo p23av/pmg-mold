@@ -1,0 +1,19 @@
+/* src/assets/styles/global.css */
+@import './reset.css';
+@import './variables.css';
+
+body {
+  font-family: Inter, Arial, sans-serif;
+  color: var(--color-text);
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
