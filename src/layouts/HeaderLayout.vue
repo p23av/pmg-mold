@@ -46,8 +46,8 @@ onUnmounted(() => {
         <!-- Логотип -->
         <RouterLink to="/" class="logo-link" @click="closeMobileMenu">
           <div class="logo">
-            <span class="logo__text">ПТК</span>
-            <span class="logo__subtitle">Технологии</span>
+            <span class="logo__text">PMG</span>
+            <span class="logo__subtitle">Industrial</span>
           </div>
         </RouterLink>
 
@@ -97,12 +97,12 @@ onUnmounted(() => {
 
         <!-- Десктопные кнопки -->
         <div class="header__actions">
-          <button class="btn btn--outline">
+          <!-- <button class="btn btn--outline">
             <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
               <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             <span>Поиск</span>
-          </button>
+          </button> -->
           <button class="btn btn--primary">
             <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
               <path d="M12 19V12M12 12V5M12 12H19M12 12H5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -153,8 +153,8 @@ onUnmounted(() => {
           <div class="container mobile-menu__header-inner">
             <RouterLink to="/" class="mobile-logo-link" @click="closeMobileMenu">
               <div class="mobile-logo">
-                <span class="mobile-logo__text">ПТК</span>
-                <span class="mobile-logo__subtitle">Технологии</span>
+                <span class="mobile-logo__text">PMG</span>
+                <span class="mobile-logo__subtitle">Industrial</span>
               </div>
             </RouterLink>
             <button 

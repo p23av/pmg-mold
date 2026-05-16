@@ -9,8 +9,8 @@
           <div class="footer__about">
             <RouterLink to="/" class="footer-logo-link">
               <div class="footer-logo">
-                <span class="footer-logo__text">ПТК</span>
-                <span class="footer-logo__subtitle">Технологии</span>
+                <span class="footer-logo__text">PMG</span>
+                <span class="footer-logo__subtitle">Industrial</span>
               </div>
             </RouterLink>
             <p class="footer__description">
@@ -110,7 +110,7 @@
         <div class="footer__bottom">
           <div class="footer__bottom-content">
             <div class="copyright">
-              © 2025 ПТК Технологии. Все права защищены.
+              © 2026 PMG Industrial. Все права защищены.
             </div>
             <div class="footer__legal">
               <RouterLink to="/privacy" class="legal-link">Политика конфиденциальности</RouterLink>

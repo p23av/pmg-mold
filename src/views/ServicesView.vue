@@ -1,4 +1,151 @@
 <!-- ServicesView.vue -->
+<script setup lang="ts">
+import HeaderLayout from '@/layouts/HeaderLayout.vue'
+import FooterLayout from '@/layouts/FooterLayout.vue'
+import { RouterLink } from 'vue-router'
+
+// Иконки
+const MoldIcon = {
+  template: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+    <path d="M3 17L10 10L14 14L21 7M3 17V21H7L16 12M3 17H7L16 8M21 7V3H17L8 12M21 7H17L8 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`
+}
+
+const AluminumIcon = {
+  template: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M7 12H17M12 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`
+}
+
+const PlasticIcon = {
+  template: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+    <path d="M19 7C19 9.20914 17.2091 11 15 11C12.7909 11 11 9.20914 11 7C11 4.79086 12.7909 3 15 3C17.2091 3 19 4.79086 19 7Z" stroke="currentColor" stroke-width="2"/>
+    <path d="M13 15H9C7.89543 15 7 15.8954 7 17V19C7 20.1046 7.89543 21 9 21H15C16.1046 21 17 20.1046 17 19V17C17 15.8954 16.1046 15 15 15H13ZM13 15V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </svg>`
+}
+
+const GalvanicIcon = {
+  template: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+    <path d="M12 2L3 7V12C3 17.55 6.84 22.74 12 23C17.16 22.74 21 17.55 21 12V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12 22C16.4183 22 20 18.4183 20 14C20 9.58172 16.4183 6 12 6C7.58172 6 4 9.58172 4 14C4 18.4183 7.58172 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`
+}
+
+const PaintingIcon = {
+  template: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`
+}
+
+const FlockingIcon = {
+  template: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+    <path d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3Z" stroke="currentColor" stroke-width="2"/>
+    <path d="M12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6Z" stroke="currentColor" stroke-width="2"/>
+    <path d="M12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9Z" stroke="currentColor" stroke-width="2"/>
+  </svg>`
+}
+
+// Данные услуг
+interface Service {
+  id: string
+  title: string
+  subtitle: string
+  description: string
+  icon: any
+  color: string
+  features: string[]
+  stats: Array<{ value: string; label: string }>
+}
+
+const services: Service[] = [
+  {
+    id: 'molds',
+    title: 'Изготовление пресс-форм',
+    subtitle: 'Точное оснащение для требовательных применений',
+    description: 'Проектирование и производство пресс-форм любой сложности на современном ЧПУ-оборудовании.',
+    icon: MoldIcon,
+    color: '#3B82F6',
+    features: ['CAD/CAM технологии', 'Сложные геометрии', 'Многогнёздные формы'],
+    stats: [
+      { value: '±0.005', label: 'Допуск, мм' },
+      { value: '50+', label: 'Проектов' }
+    ]
+  },
+  {
+    id: 'aluminum',
+    title: 'Литьё алюминия',
+    subtitle: 'Лёгкие и прочные компоненты для промышленности',
+    description: 'Литьё деталей из алюминия под давлением с гарантией качества.',
+    icon: AluminumIcon,
+    color: '#10B981',
+    features: ['Тонкие стенки от 1.5 мм', 'Сложные геометрии', 'Превосходная теплоотдача'],
+    stats: [
+      { value: '50г-15кг', label: 'Диапазон веса' },
+      { value: '6 сплавов', label: 'Материалы' }
+    ]
+  },
+  {
+    id: 'plastic',
+    title: 'Литьё пластмасс',
+    subtitle: 'Универсальные решения для полимерных компонентов',
+    description: 'Производство пластиковых деталей методом литья под давлением.',
+    icon: PlasticIcon,
+    color: '#F59E0B',
+    features: ['ABS, PC, PP, PE', 'Бикомпонентное литье', 'Лазерная маркировка'],
+    stats: [
+      { value: '0.1г-3кг', label: 'Размер деталей' },
+      { value: '9+', label: 'Материалов' }
+    ]
+  },
+  {
+    id: 'galvanic',
+    title: 'Гальванические покрытия',
+    subtitle: 'Электрохимические покрытия для защиты и декора',
+    description: 'Нанесение защитных и декоративных покрытий: хромирование, цинкование, никелирование.',
+    icon: GalvanicIcon,
+    color: '#8B5CF6',
+    features: ['Цинкование', 'Никелирование', 'Хромирование', 'Меднение'],
+    stats: [
+      { value: '5-50 мкм', label: 'Толщина' },
+      { value: '240 ч', label: 'Солевой туман' }
+    ]
+  },
+  {
+    id: 'painting',
+    title: 'Покраска',
+    subtitle: 'Защитные и декоративные покрытия',
+    description: 'Порошковая и жидкая покраска, защита от коррозии и износа.',
+    icon: PaintingIcon,
+    color: '#3B82F6',
+    features: ['Порошковая покраска', 'Жидкая покраска', 'Антивандальные', 'RAL цвета'],
+    stats: [
+      { value: '40-120 мкм', label: 'Толщина' },
+      { value: '1000 ч', label: 'Защита' }
+    ]
+  },
+  {
+    id: 'flocking',
+    title: 'Флокирование',
+    subtitle: 'Декоративные бархатные покрытия',
+    description: 'Бархатистые декоративные покрытия для премиальной продукции.',
+    icon: FlockingIcon,
+    color: '#EC4899',
+    features: ['Бархатистая поверхность', 'Антистатика', 'Шумопоглощение', 'Теплоизоляция'],
+    stats: [
+      { value: '0.3-3 мм', label: 'Длина ворса' },
+      { value: '10+', label: 'Цветов' }
+    ]
+  }
+]
+
+const requestQuote = () => {
+  // Логика открытия формы
+  console.log('Open quote form')
+}
+</script>
+
 <template>
   <div class="services-page">
     <!-- Header -->
@@ -147,153 +294,6 @@
     <FooterLayout />
   </div>
 </template>
-
-<script setup lang="ts">
-import HeaderLayout from '@/components/HeaderLayout.vue'
-import FooterLayout from '@/components/FooterLayout.vue'
-import { RouterLink } from 'vue-router'
-
-// Иконки
-const MoldIcon = {
-  template: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-    <path d="M3 17L10 10L14 14L21 7M3 17V21H7L16 12M3 17H7L16 8M21 7V3H17L8 12M21 7H17L8 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>`
-}
-
-const AluminumIcon = {
-  template: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M7 12H17M12 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>`
-}
-
-const PlasticIcon = {
-  template: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-    <path d="M19 7C19 9.20914 17.2091 11 15 11C12.7909 11 11 9.20914 11 7C11 4.79086 12.7909 3 15 3C17.2091 3 19 4.79086 19 7Z" stroke="currentColor" stroke-width="2"/>
-    <path d="M13 15H9C7.89543 15 7 15.8954 7 17V19C7 20.1046 7.89543 21 9 21H15C16.1046 21 17 20.1046 17 19V17C17 15.8954 16.1046 15 15 15H13ZM13 15V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-  </svg>`
-}
-
-const GalvanicIcon = {
-  template: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-    <path d="M12 2L3 7V12C3 17.55 6.84 22.74 12 23C17.16 22.74 21 17.55 21 12V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M12 22C16.4183 22 20 18.4183 20 14C20 9.58172 16.4183 6 12 6C7.58172 6 4 9.58172 4 14C4 18.4183 7.58172 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>`
-}
-
-const PaintingIcon = {
-  template: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>`
-}
-
-const FlockingIcon = {
-  template: `<svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-    <path d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3Z" stroke="currentColor" stroke-width="2"/>
-    <path d="M12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6Z" stroke="currentColor" stroke-width="2"/>
-    <path d="M12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9Z" stroke="currentColor" stroke-width="2"/>
-  </svg>`
-}
-
-// Данные услуг
-interface Service {
-  id: string
-  title: string
-  subtitle: string
-  description: string
-  icon: any
-  color: string
-  features: string[]
-  stats: Array<{ value: string; label: string }>
-}
-
-const services: Service[] = [
-  {
-    id: 'molds',
-    title: 'Изготовление пресс-форм',
-    subtitle: 'Точное оснащение для требовательных применений',
-    description: 'Проектирование и производство пресс-форм любой сложности на современном ЧПУ-оборудовании.',
-    icon: MoldIcon,
-    color: '#3B82F6',
-    features: ['CAD/CAM технологии', 'Сложные геометрии', 'Многогнёздные формы'],
-    stats: [
-      { value: '±0.005', label: 'Допуск, мм' },
-      { value: '50+', label: 'Проектов' }
-    ]
-  },
-  {
-    id: 'aluminum',
-    title: 'Литьё алюминия',
-    subtitle: 'Лёгкие и прочные компоненты для промышленности',
-    description: 'Литьё деталей из алюминия под давлением с гарантией качества.',
-    icon: AluminumIcon,
-    color: '#10B981',
-    features: ['Тонкие стенки от 1.5 мм', 'Сложные геометрии', 'Превосходная теплоотдача'],
-    stats: [
-      { value: '50г-15кг', label: 'Диапазон веса' },
-      { value: '6 сплавов', label: 'Материалы' }
-    ]
-  },
-  {
-    id: 'plastic',
-    title: 'Литьё пластмасс',
-    subtitle: 'Универсальные решения для полимерных компонентов',
-    description: 'Производство пластиковых деталей методом литья под давлением.',
-    icon: PlasticIcon,
-    color: '#F59E0B',
-    features: ['ABS, PC, PP, PE', 'Бикомпонентное литье', 'Лазерная маркировка'],
-    stats: [
-      { value: '0.1г-3кг', label: 'Размер деталей' },
-      { value: '9+', label: 'Материалов' }
-    ]
-  },
-  {
-    id: 'galvanic',
-    title: 'Гальванические покрытия',
-    subtitle: 'Электрохимические покрытия для защиты и декора',
-    description: 'Нанесение защитных и декоративных покрытий: хромирование, цинкование, никелирование.',
-    icon: GalvanicIcon,
-    color: '#8B5CF6',
-    features: ['Цинкование', 'Никелирование', 'Хромирование', 'Меднение'],
-    stats: [
-      { value: '5-50 мкм', label: 'Толщина' },
-      { value: '240 ч', label: 'Солевой туман' }
-    ]
-  },
-  {
-    id: 'painting',
-    title: 'Покраска',
-    subtitle: 'Защитные и декоративные покрытия',
-    description: 'Порошковая и жидкая покраска, защита от коррозии и износа.',
-    icon: PaintingIcon,
-    color: '#3B82F6',
-    features: ['Порошковая покраска', 'Жидкая покраска', 'Антивандальные', 'RAL цвета'],
-    stats: [
-      { value: '40-120 мкм', label: 'Толщина' },
-      { value: '1000 ч', label: 'Защита' }
-    ]
-  },
-  {
-    id: 'flocking',
-    title: 'Флокирование',
-    subtitle: 'Декоративные бархатные покрытия',
-    description: 'Бархатистые декоративные покрытия для премиальной продукции.',
-    icon: FlockingIcon,
-    color: '#EC4899',
-    features: ['Бархатистая поверхность', 'Антистатика', 'Шумопоглощение', 'Теплоизоляция'],
-    stats: [
-      { value: '0.3-3 мм', label: 'Длина ворса' },
-      { value: '10+', label: 'Цветов' }
-    ]
-  }
-]
-
-const requestQuote = () => {
-  // Логика открытия формы
-  console.log('Open quote form')
-}
-</script>
 
 <style scoped>
 .services-page {

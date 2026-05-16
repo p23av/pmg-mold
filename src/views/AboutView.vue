@@ -1,4 +1,21 @@
 <!-- AboutView.vue -->
+<script setup lang="ts">
+import HeaderLayout from '@/layouts/HeaderLayout.vue'
+import FooterLayout from '@/layouts/FooterLayout.vue'
+
+// Импорт изображений
+import heroImage from '@/assets/images/hero.jpg'
+import engineerImage from '@/assets/images/engineer.jpg'
+
+// Для галереи фабрики
+import factory1 from '@/assets/images/factory1.jpg'
+import factory2 from '@/assets/images/factory2.jpg'
+import factory3 from '@/assets/images/factory3.jpg'
+import factory4 from '@/assets/images/factory4.jpg'
+import factory5 from '@/assets/images/factory5.jpg'
+import factory6 from '@/assets/images/factory6.jpg'
+</script>
+
 <template>
   <div class="page">
     <!-- Header -->
@@ -9,9 +26,9 @@
       <div class="container">
         <div class="hero__grid">
           <div class="hero__content">
-            <h1 class="hero__title">О компании Industrial Solutions</h1>
+            <h1 class="hero__title">О компании PMG Industrial</h1>
             <p class="hero__subtitle">
-              Более трёх десятилетий мы являемся лидерами в области прецизионного производства, 
+              Более двух десятилетий мы являемся лидерами в области прецизионного производства, 
               предлагая высочайшее качество в изготовлении пресс-форм, литье металлов и пластмасс, 
               а также нанесении защитных покрытий.
             </p>
@@ -250,23 +267,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import HeaderLayout from '@/components/HeaderLayout.vue'
-import FooterLayout from '@/components/FooterLayout.vue'
-
-// Импорт изображений
-import heroImage from '@/assets/images/hero.jpg'
-import engineerImage from '@/assets/images/engineer.jpg'
-
-// Для галереи фабрики
-import factory1 from '@/assets/images/factory1.jpg'
-import factory2 from '@/assets/images/factory2.jpg'
-import factory3 from '@/assets/images/factory3.jpg'
-import factory4 from '@/assets/images/factory4.jpg'
-import factory5 from '@/assets/images/factory5.jpg'
-import factory6 from '@/assets/images/factory6.jpg'
-</script>
-
 <style scoped>
 .page {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -402,6 +402,7 @@ import factory6 from '@/assets/images/factory6.jpg'
   font-size: 2.5rem;
   font-weight: 800;
   background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 0.5rem;

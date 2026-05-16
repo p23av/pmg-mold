@@ -246,8 +246,8 @@
 </template>
 
 <script setup lang="ts">
-import HeaderLayout from '@/components/HeaderLayout.vue'
-import FooterLayout from '@/components/FooterLayout.vue'
+import HeaderLayout from '@/layouts/HeaderLayout.vue'
+import FooterLayout from '@/layouts/FooterLayout.vue'
 import { reactive, ref } from 'vue'
 
 // Состояние формы

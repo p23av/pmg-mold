@@ -1,82 +1,110 @@
-// router/index.ts
+// src/router/index.ts
 import { createRouter, createWebHistory } from 'vue-router'
+import { seoConfig, PageNames } from './seo.config'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: PageNames.HOME,
       component: () => import('@/views/HomeView.vue'),
-      meta: { title: 'Главная - ПТК Технологии' }
+      meta: { 
+        title: seoConfig.HOME.title,
+        description: seoConfig.HOME.description
+      }
     },
     {
       path: '/about',
-      name: 'about',
+      name: PageNames.ABOUT,
       component: () => import('@/views/AboutView.vue'),
-      meta: { title: 'О компании - ПТК Технологии' }
+      meta: { 
+        title: seoConfig.ABOUT.title,
+        description: seoConfig.ABOUT.description
+      }
     },
     {
       path: '/contact',
-      name: 'contact',
+      name: PageNames.CONTACT,
       component: () => import('@/views/ContactView.vue'),
-      meta: { title: 'Контакты - ПТК Технологии' }
+      meta: { 
+        title: seoConfig.CONTACT.title,
+        description: seoConfig.CONTACT.description
+      }
     },
     {
       path: '/services',
-      name: 'services',
+      name: PageNames.SERVICES,
       component: () => import('@/views/ServicesView.vue'),
-      meta: { title: 'Услуги - Полный цикл производства' }
+      meta: { 
+        title: seoConfig.SERVICES.title,
+        description: seoConfig.SERVICES.description
+      }
     },
-    // {
-    //   path: '/services/molds',
-    //   name: 'molds',
-    //   component: () => import('@/views/services/MoldsView.vue'),
-    //   meta: { title: 'Изготовление пресс-форм - Точное оснащение' }
-    // },
-    // {
-    //   path: '/services/aluminum',
-    //   name: 'aluminum',
-    //   component: () => import('@/views/services/AluminumView.vue'),
-    //   meta: { title: 'Литьё алюминия - Лёгкие и прочные компоненты' }
-    // },
-    // {
-    //   path: '/services/plastic',
-    //   name: 'plastic',
-    //   component: () => import('@/views/services/PlasticView.vue'),
-    //   meta: { title: 'Литьё пластмасс - Универсальные решения' }
-    // },
-    // {
-    //   path: '/services/galvanic',
-    //   name: 'galvanic',
-    //   component: () => import('@/views/services/GalvanicView.vue'),
-    //   meta: { title: 'Гальванические покрытия - Электрохимические покрытия' }
-    // },
-    // {
-    //   path: '/services/painting',
-    //   name: 'painting',
-    //   component: () => import('@/views/services/PaintingView.vue'),
-    //   meta: { title: 'Покраска - Защитные и декоративные покрытия' }
-    // },
-    // {
-    //   path: '/services/flocking',
-    //   name: 'flocking',
-    //   component: () => import('@/views/services/FlockingView.vue'),
-    //   meta: { title: 'Флокирование - Декоративные бархатные покрытия' }
-    // },
-    // {
-    //   path: '/:pathMatch(.*)*',
-    //   name: 'not-found',
-    //   component: () => import('@/views/NotFoundView.vue'),
-    //   meta: { title: 'Страница не найдена' }
-    // }
+    {
+      path: '/services/molds',
+      name: PageNames.MOLDS,
+      component: () => import('@/views/services/MoldsView.vue'),
+      meta: { 
+        title: seoConfig.MOLDS.title,
+        description: seoConfig.MOLDS.description
+      }
+    },
+    {
+      path: '/services/aluminum',
+      name: PageNames.ALUMINUM,
+      component: () => import('@/views/services/AluminumView.vue'),
+      meta: { 
+        title: seoConfig.ALUMINUM.title,
+        description: seoConfig.ALUMINUM.description
+      }
+    },
+    {
+      path: '/services/plastic',
+      name: PageNames.PLASTIC,
+      component: () => import('@/views/services/PlasticView.vue'),
+      meta: { 
+        title: seoConfig.PLASTIC.title,
+        description: seoConfig.PLASTIC.description
+      }
+    },
+    {
+      path: '/services/galvanic',
+      name: PageNames.GALVANIC,
+      component: () => import('@/views/services/GalvanicView.vue'),
+      meta: { 
+        title: seoConfig.GALVANIC.title,
+        description: seoConfig.GALVANIC.description
+      }
+    },
+    {
+      path: '/services/painting',
+      name: PageNames.PAINTING,
+      component: () => import('@/views/services/PaintingView.vue'),
+      meta: { 
+        title: seoConfig.PAINTING.title,
+        description: seoConfig.PAINTING.description
+      }
+    },
+    {
+      path: '/services/flocking',
+      name: PageNames.FLOCKING,
+      component: () => import('@/views/services/FlockingView.vue'),
+      meta: { 
+        title: seoConfig.FLOCKING.title,
+        description: seoConfig.FLOCKING.description
+      }
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: PageNames.NOT_FOUND,
+      component: () => import('@/views/NotFoundView.vue'),
+      meta: { 
+        title: seoConfig.NOT_FOUND.title,
+        description: seoConfig.NOT_FOUND.description
+      }
+    }
   ]
-})
-
-// Устанавливаем title для каждой страницы
-router.beforeEach((to, _, next) => {
-  document.title = to.meta.title as string || 'ПТК Технологии'
-  next()
 })
 
 export default router
