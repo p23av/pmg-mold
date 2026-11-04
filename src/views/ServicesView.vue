@@ -162,7 +162,7 @@ const requestQuote = () => {
           </p>
           <div class="hero-stats">
             <div class="stat">
-              <div class="stat-number">18+</div>
+              <div class="stat-number">24+</div>
               <div class="stat-label">Лет опыта</div>
             </div>
             <div class="stat">

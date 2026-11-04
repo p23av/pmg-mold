@@ -46,8 +46,8 @@ onUnmounted(() => {
         <!-- Логотип -->
         <RouterLink to="/" class="logo-link" @click="closeMobileMenu">
           <div class="logo">
-            <span class="logo__text">PMG</span>
-            <span class="logo__subtitle">Industrial</span>
+            <span class="logo__text">СТД</span>
+            <span class="logo__subtitle">Индастриал</span>
           </div>
         </RouterLink>
 
