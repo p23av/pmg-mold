@@ -4,6 +4,15 @@ import { seoConfig, PageNames } from './seo.config'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  scrollBehavior(to, _from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    }
+    if (to.hash) {
+      return { el: to.hash, behavior: 'smooth', top: 100 }
+    }
+    return { top: 0 }
+  },
   routes: [
     {
       path: '/',
@@ -93,6 +102,24 @@ const router = createRouter({
       meta: { 
         title: seoConfig.FLOCKING.title,
         description: seoConfig.FLOCKING.description
+      }
+    },
+    {
+      path: '/privacy',
+      name: PageNames.PRIVACY,
+      component: () => import('@/views/PrivacyView.vue'),
+      meta: {
+        title: seoConfig.PRIVACY.title,
+        description: seoConfig.PRIVACY.description
+      }
+    },
+    {
+      path: '/terms',
+      name: PageNames.TERMS,
+      component: () => import('@/views/TermsView.vue'),
+      meta: {
+        title: seoConfig.TERMS.title,
+        description: seoConfig.TERMS.description
       }
     },
     {

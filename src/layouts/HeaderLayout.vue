@@ -103,7 +103,7 @@ onUnmounted(() => {
             </svg>
             <span>Поиск</span>
           </button> -->
-          <button class="btn btn--primary">
+          <button class="btn btn--primary" @click="$router.push('/contact')">
             <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
               <path d="M12 19V12M12 12V5M12 12H19M12 12H5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -153,8 +153,8 @@ onUnmounted(() => {
           <div class="container mobile-menu__header-inner">
             <RouterLink to="/" class="mobile-logo-link" @click="closeMobileMenu">
               <div class="mobile-logo">
-                <span class="mobile-logo__text">PMG</span>
-                <span class="mobile-logo__subtitle">Industrial</span>
+                <span class="mobile-logo__text">СТД</span>
+                <span class="mobile-logo__subtitle">Индастриал</span>
               </div>
             </RouterLink>
             <button 
@@ -238,7 +238,7 @@ onUnmounted(() => {
                 </svg>
                 <span>Поиск</span>
               </button>
-              <button class="btn btn--primary btn--block" @click="closeMobileMenu">
+              <button class="btn btn--primary btn--block" @click="closeMobileMenu(); $router.push('/contact')">
                 <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <path d="M12 19V12M12 12V5M12 12H19M12 12H5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -249,7 +249,7 @@ onUnmounted(() => {
             <div class="mobile-menu__contacts">
               <div class="contact-info">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M22 16.92V19C22 19.5304 21.7893 20.0391 21.4142 20.4142C21.0391 20.7893 20.5304 21 20 21C16.824 21 13.7615 19.8491 11.3928 17.7742C9.024 15.6993 7.5 12.8261 7.5 9.75C7.5 8.25544 7.69399 6.77216 8.07403 5.33894C8.45406 3.90573 9.01537 2.53661 9.74264 1.27208C10.1512 0.59413 10.8284 0.125 11.5858 0.125C12.3432 0.125 13.0204 0.59413 13.4289 1.27208L15.9306 5.58065C16.305 6.21387 16.4169 6.9698 16.2427 7.68204C16.0684 8.39428 15.6211 9.00804 15 9.395L13 10.5" stroke="#4b5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="#4b5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <div class="contact-info__content">
                   <div class="contact-info__label">Телефон</div>
@@ -273,7 +273,7 @@ onUnmounted(() => {
                 </svg>
                 <div class="contact-info__content">
                   <div class="contact-info__label">Email</div>
-                  <a href="mailto:info@ptk-tech.ru" class="contact-info__value">info@ptk-tech.ru</a>
+                  <a href="mailto:info@moldrussia.ru" class="contact-info__value">info@moldrussia.ru</a>
                 </div>
               </div>
             </div>

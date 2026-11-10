@@ -124,7 +124,7 @@
               </div>
               
               <div class="contact-methods">
-                <a href="tel:+15551234567" class="contact-method">
+                <a href="tel:+79999999999" class="contact-method">
                   <div class="method-icon phone">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                       <path d="M20 10.999H22C22 5.869 18.127 2 12.99 2V4C17.052 4 20 6.943 20 10.999Z" fill="currentColor"/>
@@ -133,12 +133,12 @@
                   </div>
                   <div class="method-content">
                     <div class="method-label">Телефон</div>
-                    <div class="method-value">+1 (555) 123-4567</div>
+                    <div class="method-value">+7 (999) 999-99-99</div>
                   </div>
                   <div class="method-arrow">→</div>
                 </a>
 
-                <a href="mailto:info@industrialsolutions.com" class="contact-method">
+                <a href="mailto:info@moldrussia.ru" class="contact-method">
                   <div class="method-icon email">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                       <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="currentColor"/>
@@ -146,7 +146,7 @@
                   </div>
                   <div class="method-content">
                     <div class="method-label">Email</div>
-                    <div class="method-value">info@industrialsolutions.com</div>
+                    <div class="method-value">info@moldrussia.ru</div>
                   </div>
                   <div class="method-arrow">→</div>
                 </a>
@@ -159,7 +159,7 @@
                   </div>
                   <div class="method-content">
                     <div class="method-label">Адрес</div>
-                    <div class="method-value">123 Industrial Park, Cityville</div>
+                    <div class="method-value">г. Москва, ул. Промышленная, 15</div>
                   </div>
                   <div class="method-arrow">→</div>
                 </div>
@@ -365,15 +365,14 @@ const handleSubmit = async () => {
   }
 }
 
-// Быстрый запрос КП
+// Быстрый запрос КП — прокрутка к форме
 const handleQuickRequest = () => {
-  // Здесь можно реализовать логику быстрого запроса
-  window.location.href = '/request-quote'
+  document.querySelector('.contact-form')?.scrollIntoView({ behavior: 'smooth' })
 }
 
 // Открытие карты
 const openMap = () => {
-  const address = encodeURIComponent('123 Industrial Park, Cityville, State 12345')
+  const address = encodeURIComponent('г. Москва, ул. Промышленная, 15')
   window.open(`https://yandex.ru/maps/?text=${address}`, '_blank')
 }
 

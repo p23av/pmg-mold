@@ -141,8 +141,7 @@ const services: Service[] = [
 ]
 
 const requestQuote = () => {
-  // Логика открытия формы
-  console.log('Open quote form')
+  window.location.href = '/contact'
 }
 </script>
 
@@ -279,7 +278,7 @@ const requestQuote = () => {
             <button class="btn btn-primary btn-large" @click="requestQuote">
               Получить расчёт
             </button>
-            <a href="tel:+74951234567" class="btn btn-outline btn-large">
+            <a href="tel:+79999999999" class="btn btn-outline btn-large">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                 <path d="M22 16.92V19C22 19.5304 21.7893 20.0391 21.4142 20.4142C21.0391 20.7893 20.5304 21 20 21C16.824 21 13.7615 19.8491 11.3928 17.7742C9.024 15.6993 7.5 12.8261 7.5 9.75C7.5 8.25544 7.69399 6.77216 8.07403 5.33894C8.45406 3.90573 9.01537 2.53661 9.74264 1.27208C10.1512 0.59413 10.8284 0.125 11.5858 0.125C12.3432 0.125 13.0204 0.59413 13.4289 1.27208L15.9306 5.58065C16.305 6.21387 16.4169 6.9698 16.2427 7.68204C16.0684 8.39428 15.6211 9.00804 15 9.395L13 10.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>

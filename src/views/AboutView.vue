@@ -26,7 +26,7 @@ import factory6 from '@/assets/images/factory6.jpg'
       <div class="container">
         <div class="hero__grid">
           <div class="hero__content">
-            <h1 class="hero__title">О компании PMG Industrial</h1>
+            <h1 class="hero__title">О компании СТД Индастриал</h1>
             <p class="hero__subtitle">
               Более двух десятилетий мы являемся лидерами в области прецизионного производства, 
               предлагая высочайшее качество в изготовлении пресс-форм, литье металлов и пластмасс, 
@@ -69,7 +69,7 @@ import factory6 from '@/assets/images/factory6.jpg'
         <div class="story__grid">
           <div class="story__content">
             <p class="story__text">
-              Основанная в 1990 году, компания Industrial Solutions начинала как небольшая мастерская 
+              Основанная в 1990 году, компания СТД Индастриал начинала как небольшая мастерская 
               с целью революционизировать производство пресс-форм. За годы работы мы выросли в полноценного 
               промышленного партнёра для сотен предприятий.
             </p>
@@ -244,19 +244,19 @@ import factory6 from '@/assets/images/factory6.jpg'
         <div class="cta__content">
           <h2 class="cta__title">Готовы стать нашим партнёром?</h2>
           <p class="cta__description">
-            Узнайте, как Industrial Solutions может реализовать ваш проект с помощью точного производства, 
+            Узнайте, как СТД Индастриал может реализовать ваш проект с помощью точного производства, 
             современного литья и профессиональной обработки поверхностей.
           </p>
           <div class="cta__buttons">
-            <button class="btn btn-primary btn-large">
+            <button class="btn btn-primary btn-large" @click="$router.push('/contact')">
               Получить коммерческое предложение
             </button>
-            <button class="btn btn-outline btn-large">
+            <a href="tel:+79999999999" class="btn btn-outline btn-large">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M22 16.92V19.92C22 20.47 21.55 20.92 21 20.92H19C17.9 20.92 16 20 16 18V12C16 10 17 9 18 9H20C20.55 9 21 9.45 21 10V11C21 11.55 21.45 12 22 12C22.55 12 23 11.55 23 11V10C23 8.34 21.66 7 20 7H18C15.24 7 13 9.24 13 12V18C13 21.87 16.13 25 20 25H21C21.55 25 22 24.55 22 24V21.08C22 20.53 21.55 20.08 21 20.08C20.45 20.08 20 20.53 20 21.08V22H19C17.35 22 15 20.75 15 18V12C15 10.35 16.35 9 18 9H20C20.55 9 21 8.55 21 8C21 7.45 20.55 7 20 7H18C15.24 7 13 9.24 13 12V18C13 21.87 16.13 25 20 25H21C21.55 25 22 24.55 22 24V21.08C22 20.53 21.55 20.08 21 20.08C20.45 20.08 20 20.53 20 21.08V22H19C17.35 22 15 20.75 15 18V12C15 10.35 16.35 9 18 9H20C20.55 9 21 8.55 21 8C21 7.45 20.55 7 20 7H18C15.24 7 13 9.24 13 12V18C13 21.87 16.13 25 20 25H21C21.55 25 22 24.55 22 24V21.08" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              +7 (XXX) XXX-XX-XX
-            </button>
+              +7 (999) 999-99-99
+            </a>
           </div>
         </div>
       </div>

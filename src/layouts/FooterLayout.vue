@@ -16,7 +16,7 @@
             <p class="footer__description">
               Предоставляем инновационные промышленные решения в области 
               изготовления пресс-форм, литья и поверхностных обработок. 
-              Более 24 лет опыта в производстве.
+              Более 30 лет опыта в производстве.
             </p>
             <div class="footer__social">
               <a href="#" class="social-link" aria-label="ВКонтакте">
@@ -68,20 +68,20 @@
                 <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="#6b7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="#6b7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              <span>г.Москва, ул. Лосиноостровская, д.38А, стр.4</span>
+              <span>г. Москва, ул. Промышленная, 15</span>
             </div>
             <div class="contact-info">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                 <path d="M22 16.92V19C22 19.5304 21.7893 20.0391 21.4142 20.4142C21.0391 20.7893 20.5304 21 20 21C16.824 21 13.7615 19.8491 11.3928 17.7742C9.024 15.6993 7.5 12.8261 7.5 9.75C7.5 8.25544 7.69399 6.77216 8.07403 5.33894C8.45406 3.90573 9.01537 2.53661 9.74264 1.27208C10.1512 0.59413 10.8284 0.125 11.5858 0.125C12.3432 0.125 13.0204 0.59413 13.4289 1.27208L15.9306 5.58065C16.305 6.21387 16.4169 6.9698 16.2427 7.68204C16.0684 8.39428 15.6211 9.00804 15 9.395L13 10.5" stroke="#6b7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              <a href="tel:+74951234567">+7 (977) 410-86-46</a>
+              <a href="tel:+79999999999">+7 (999) 999-99-99</a>
             </div>
             <div class="contact-info">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                 <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#6b7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M22 6L12 13L2 6" stroke="#6b7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              <a href="mailto:info@ptk-tech.ru">info@moldrussia.ru</a>
+              <a href="mailto:info@moldrussia.ru">info@moldrussia.ru</a>
             </div>
             <div class="contact-info">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
