@@ -1,0 +1,36 @@
+# .htaccess для moldrussia.ru (shared-хостинг reg.ru, Apache)
+# Кладётся в корень сайта рядом с index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # www -> основной домен
+  RewriteCond %{HTTP_HOST} ^www\.moldrussia\.ru$ [NC]
+  RewriteRule ^(.*)$ https://moldrussia.ru/$1 [R=301,L]
+
+  # http -> https
+  # На reg.ru SSL обрабатывает nginx-прокси, поэтому проверяем
+  # заголовок X-Forwarded-Proto, а не флаг %{HTTPS} — иначе будет
+  # бесконечный редирект
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://moldrussia.ru/$1 [R=301,L]
+
+  # SPA fallback: если запрошенный файл или папка не существуют —
+  # отдаём index.html (иначе внутренние страницы отдают 404)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Кэширование хэшированных ассетов Vite
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType video/mp4 "access plus 1 month"
+</IfModule>

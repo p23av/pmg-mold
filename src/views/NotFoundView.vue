@@ -1,18 +1,10 @@
 <script setup lang="ts">
-import { useMeta } from 'vue-meta'
-import { seoConfig } from '@/router/seo.config'
 import { useRouter } from 'vue-router'
 import HeaderLayout from '@/layouts/HeaderLayout.vue'
 import FooterLayout from '@/layouts/FooterLayout.vue'
 
 const router = useRouter()
 
-useMeta({
-  title: seoConfig.NOT_FOUND.title,
-  meta: [
-    { name: 'description', content: seoConfig.NOT_FOUND.description }
-  ]
-})
 
 const goHome = () => {
   router.push('/')

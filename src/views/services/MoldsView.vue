@@ -1,16 +1,7 @@
 <script setup lang="ts">
-import { useMeta } from 'vue-meta'
-import { seoConfig } from '@/router/seo.config'
 import HeaderLayout from '@/layouts/HeaderLayout.vue'
 import FooterLayout from '@/layouts/FooterLayout.vue'
 
-useMeta({
-  title: seoConfig.MOLDS.title,
-  meta: [
-    { name: 'description', content: seoConfig.MOLDS.description },
-    { name: 'keywords', content: 'пресс формы, изготовление пресс форм, пресс формы для литья алюминия, пресс формы для пластика, пресс формы на заказ' }
-  ]
-})
 </script>
 
 <template>

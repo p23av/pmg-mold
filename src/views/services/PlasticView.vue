@@ -1,16 +1,7 @@
 <script setup lang="ts">
-import { useMeta } from 'vue-meta'
-import { seoConfig } from '@/router/seo.config'
 import HeaderLayout from '@/layouts/HeaderLayout.vue'
 import FooterLayout from '@/layouts/FooterLayout.vue'
 
-useMeta({
-  title: seoConfig.PLASTIC.title,
-  meta: [
-    { name: 'description', content: seoConfig.PLASTIC.description },
-    { name: 'keywords', content: 'литье пластмасс, литье пластмасс под давлением, изготовление пластиковых деталей, термопластавтоматы' }
-  ]
-})
 </script>
 
 <template>

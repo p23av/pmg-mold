@@ -1,15 +1,7 @@
 <script setup lang="ts">
-import { useMeta } from 'vue-meta'
-import { seoConfig } from '@/router/seo.config'
 import HeaderLayout from '@/layouts/HeaderLayout.vue'
 import FooterLayout from '@/layouts/FooterLayout.vue'
 
-useMeta({
-  title: seoConfig.TERMS.title,
-  meta: [
-    { name: 'description', content: seoConfig.TERMS.description }
-  ]
-})
 </script>
 
 <template>

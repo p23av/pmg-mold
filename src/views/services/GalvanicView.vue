@@ -1,16 +1,7 @@
 <script setup lang="ts">
-import { useMeta } from 'vue-meta'
-import { seoConfig } from '@/router/seo.config'
 import HeaderLayout from '@/layouts/HeaderLayout.vue'
 import FooterLayout from '@/layouts/FooterLayout.vue'
 
-useMeta({
-  title: seoConfig.GALVANIC.title,
-  meta: [
-    { name: 'description', content: seoConfig.GALVANIC.description },
-    { name: 'keywords', content: 'гальванические покрытия, цинкование, хромирование, никелирование, защита от коррозии' }
-  ]
-})
 </script>
 
 <template>

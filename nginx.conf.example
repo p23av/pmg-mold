@@ -1,0 +1,65 @@
+# nginx.conf.example — конфигурация для moldrussia.ru
+# Скопируйте в /etc/nginx/sites-available/moldrussia и адаптируйте пути.
+#
+# Что исправляет:
+#  1. try_files — внутренние страницы перестают отдавать 404
+#  2. редирект http -> https и www -> основной домен
+#  3. кэширование статики Vite
+
+# --- HTTP: редирект на HTTPS (после установки сертификата) ---
+# Пока сертификата нет, закомментируйте return 301 и раскомментируйте блок location.
+server {
+    listen 80;
+    server_name moldrussia.ru www.moldrussia.ru;
+
+    return 301 https://moldrussia.ru$request_uri;
+
+    # --- Временный вариант без SSL: ---
+    # root /var/www/moldrussia/dist;
+    # index index.html;
+    # location / {
+    #     try_files $uri $uri/ /index.html;
+    # }
+}
+
+# --- HTTPS: редирект www -> основной домен ---
+server {
+    listen 443 ssl;
+    server_name www.moldrussia.ru;
+
+    ssl_certificate     /etc/letsencrypt/live/moldrussia.ru/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/moldrussia.ru/privkey.pem;
+
+    return 301 https://moldrussia.ru$request_uri;
+}
+
+# --- HTTPS: основной сайт ---
+server {
+    listen 443 ssl;
+    server_name moldrussia.ru;
+
+    ssl_certificate     /etc/letsencrypt/live/moldrussia.ru/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/moldrussia.ru/privkey.pem;
+
+    root /var/www/moldrussia/dist;   # <- путь к папке dist на сервере
+    index index.html;
+
+    # Сначала ищем реальный файл (пререндеренные страницы, картинки, assets),
+    # если не нашли — отдаём SPA-заглушку index.html
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Хэшированные ассеты Vite можно кэшировать навсегда
+    location /assets/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+
+    gzip on;
+    gzip_types text/css application/javascript image/svg+xml application/xml;
+}
+
+# Установка бесплатного SSL-сертификата (один раз):
+#   sudo apt install certbot python3-certbot-nginx
+#   sudo certbot --nginx -d moldrussia.ru -d www.moldrussia.ru

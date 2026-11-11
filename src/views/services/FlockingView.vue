@@ -1,16 +1,7 @@
 <script setup lang="ts">
-import { useMeta } from 'vue-meta'
-import { seoConfig } from '@/router/seo.config'
 import HeaderLayout from '@/layouts/HeaderLayout.vue'
 import FooterLayout from '@/layouts/FooterLayout.vue'
 
-useMeta({
-  title: seoConfig.FLOCKING.title,
-  meta: [
-    { name: 'description', content: seoConfig.FLOCKING.description },
-    { name: 'keywords', content: 'флокирование, бархатное покрытие, флокирование изделий, нанесение флока, декоративное покрытие' }
-  ]
-})
 </script>
 
 <template>

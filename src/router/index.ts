@@ -134,4 +134,21 @@ const router = createRouter({
   ]
 })
 
+// Применяем SEO-метаданные маршрута к <head> документа.
+// Работает и в браузере, и при пререндеринге — в отличие от vue-meta.
+router.afterEach((to) => {
+  if (to.meta.title) {
+    document.title = to.meta.title as string
+  }
+  if (to.meta.description) {
+    let tag = document.querySelector('meta[name="description"]')
+    if (!tag) {
+      tag = document.createElement('meta')
+      tag.setAttribute('name', 'description')
+      document.head.appendChild(tag)
+    }
+    tag.setAttribute('content', to.meta.description as string)
+  }
+})
+
 export default router

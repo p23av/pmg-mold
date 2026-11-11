@@ -2,28 +2,11 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue'
 
-import { useMeta } from 'vue-meta'
-import { seoConfig } from '@/router/seo.config'
-
 import HeaderLayout from '@/layouts/HeaderLayout.vue'
 import FooterLayout from '@/layouts/FooterLayout.vue'
 
 import { RouterLink } from 'vue-router'
 
-// Используем напрямую, без динамических ключей
-const homeSeo = seoConfig.HOME
-
-useMeta({
-  title: homeSeo.title,
-  meta: [
-    { name: 'description', content: homeSeo.description },
-    { name: 'keywords', content: 'пресс формы, литье алюминия, литье пластмасс, гальваника, порошковая окраска, флокирование' },
-    { property: 'og:title', content: homeSeo.title },
-    { property: 'og:description', content: homeSeo.description },
-    { property: 'og:url', content: 'https://moldrussia.ru' },
-    { property: 'og:image', content: 'https://moldrussia.ru/og-image.jpg' }
-  ]
-})
 
 // Компоненты иконок
 const MoldIcon = {

@@ -1,16 +1,7 @@
 <script setup lang="ts">
-import { useMeta } from 'vue-meta'
-import { seoConfig } from '@/router/seo.config'
 import HeaderLayout from '@/layouts/HeaderLayout.vue'
 import FooterLayout from '@/layouts/FooterLayout.vue'
 
-useMeta({
-  title: seoConfig.PAINTING.title,
-  meta: [
-    { name: 'description', content: seoConfig.PAINTING.description },
-    { name: 'keywords', content: 'порошковая окраска, покраска металла, порошковая покраска на заказ, защитные покрытия' }
-  ]
-})
 </script>
 
 <template>

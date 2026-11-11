@@ -1,16 +1,7 @@
 <script setup lang="ts">
-import { useMeta } from 'vue-meta'
-import { seoConfig } from '@/router/seo.config'
 import HeaderLayout from '@/layouts/HeaderLayout.vue'
 import FooterLayout from '@/layouts/FooterLayout.vue'
 
-useMeta({
-  title: seoConfig.ALUMINUM.title,
-  meta: [
-    { name: 'description', content: seoConfig.ALUMINUM.description },
-    { name: 'keywords', content: 'литье алюминия, литье алюминия под давлением, алюминиевое литье, литье алюминиевых деталей' }
-  ]
-})
 </script>
 
 <template>
